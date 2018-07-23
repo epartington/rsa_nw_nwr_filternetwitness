@@ -1,0 +1,4 @@
+name="###filter rules###" rule="netname exists" disable type=application
+name=netwitness rule="ip.src = <customer_netwitness_ip_list>" alert=netname.src type=application
+name=netwitness rule="ip.dst = <customer_netwitness_ip_list>" alert=netname.dst type=application
+name=filter_netwitness rule="(tcp.dstport = 50001-50008,50101-50108,56001-56008 || tcp.srcport = 50001-50008,50101-50108,56001-56008) && (netname.src = 'netwitness' || netname.dst = 'netwitness')" filter type=application
